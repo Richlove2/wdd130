@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us | Whitewater Rafting</title>
+  <style>
+    /* Reuse the same CSS as index.html */
+    :root {
+      --primary: #505033;
+      --secondary: #264969;
+      --accent1: #CFCFB4;
+      --accent2: #B4CDE4;
+    }
+    body {
+      font-family: 'Roboto', sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background-color: var(--secondary);
+      color: white;
+      padding: 1rem;
+      text-align: center;
+    }
+    nav a {
+      color: white;
+      margin: 0 1rem;
+      text-decoration: none;
+      font-weight: 700;
+    }
+    .history {
+      padding: 2rem;
+      background-color: var(--accent2);
+    }
+    .team {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+      padding: 2rem;
+    }
+    .team-member {
+      background-color: var(--accent1);
+      padding: 1rem;
+      border-radius: 5px;
+      width: 200px;
+      text-align: center;
+    }
+    footer {
+      background-color: var(--secondary);
+      color: white;
+      text-align: center;
+      padding: 1rem;
+    }
+  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Georgia:wght@400;700;900&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+          <img src="z-splash.png" alt="Z-Splash Logo" class="logo">
+          <h1 style="font-family: 'Georgia', serif; margin: 0;">WHITEWATER RAFTING</h1>
+        </div>
+        <nav>
+          <a href="index.html">Home</a>
+          <a href="about.html">About Us</a>
+          <a href="trips.html">Trips</a>
+          <a href="contact.html">Contact Us</a>
+        </nav>
+      </header>
+
+  <main>
+    <section class="history">
+      <h2 style="font-family: 'Georgia', serif;">OUR HISTORY</h2>
+      <p>Founded in 2005, Whitewater Rafting Co. began with a passion for adventure and a commitment to safety. Our founders, John and Sarah Rivers, started with just one raft and a dream to share the beauty of the river with others.</p>
+      <img src="history.jpg" alt="Founders" width="300">
+    </section>
+
+    <section>
+      <h2 style="font-family: 'Georgia', serif; text-align: center; padding: 1rem;">MEET OUR TEAM</h2>
+      <div class="team">
+        <div class="team-member">
+          <img src="guide1.jpg" alt="Guide Alex" width="100">
+          <h3>Alex</h3>
+          <p>Lead Guide (10+ years experience)</p>
+        </div>
+        <div class="team-member">
+          <img src="guide2.jpg" alt="Guide Maria" width="100">
+          <h3>Maria</h3>
+          <p>Safety Expert</p>
+        </div>
+      </div>
+    </section>
+
+    <section style="background-color: var(--primary); color: white; padding: 2rem; text-align: center;">
+      <h2 style="font-family: 'Georgia', serif;">SAFETY FIRST</h2>
+      <p>All guides are certified in CPR and wilderness first aid. We use only top-tier equipment.</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Richlove Ama Tetteh Co. | 
+      <a href="#" style="color: var(--accent1);">Privacy Policy</a>
+    </p>
+  </footer>
+</body>
+</html>
