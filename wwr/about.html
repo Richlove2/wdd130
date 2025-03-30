@@ -1,108 +1,270 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About Us | Whitewater Rafting</title>
-  <style>
-    /* Reuse the same CSS as index.html */
-    :root {
-      --primary: #505033;
-      --secondary: #264969;
-      --accent1: #CFCFB4;
-      --accent2: #B4CDE4;
-    }
-    body {
-      font-family: 'Roboto', sans-serif;
-      margin: 0;
-      padding: 0;
-    }
-    header {
-      background-color: var(--secondary);
-      color: white;
-      padding: 1rem;
-      text-align: center;
-    }
-    nav a {
-      color: white;
-      margin: 0 1rem;
-      text-decoration: none;
-      font-weight: 700;
-    }
-    .history {
-      padding: 2rem;
-      background-color: var(--accent2);
-    }
-    .team {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 1rem;
-      padding: 2rem;
-    }
-    .team-member {
-      background-color: var(--accent1);
-      padding: 1rem;
-      border-radius: 5px;
-      width: 200px;
-      text-align: center;
-    }
-    footer {
-      background-color: var(--secondary);
-      color: white;
-      text-align: center;
-      padding: 1rem;
-    }
-  </style>
-  <link href="https://fonts.googleapis.com/css2?family=Georgia:wght@400;700;900&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Whitewater Rafting</title>
+    <style>
+        /* Color Scheme (from Coolors) */
+        :root {
+            --primary: #505033;    /* Drab dark brown */
+            --secondary: #264969;  /* Indigo dye */
+            --accent1: #CFCFB4;    /* Pearl */
+            --accent2: #B4CDE4;    /* Columbia blue */
+        }
+        
+        body {
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--secondary);
+            color: white;
+            padding: 1rem;
+        }
+
+        .header-grid {
+            display: grid;
+            grid-template-columns: auto 1fr auto;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .logo {
+            width: 100px;
+            height: auto;
+        }
+
+        h1 {
+            color: white;
+            margin: 0;
+            font-family: 'Georgia', serif;
+        }
+
+        /* Navigation */
+        .nav-flex {
+            display: flex;
+            list-style: none;
+            gap: 20px;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-flex a {
+            text-decoration: none;
+            color: white;
+            font-weight: 700;
+            padding: 5px 10px;
+        }
+
+        .nav-flex a:hover {
+            color: var(--accent1);
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            margin-bottom: 40px;
+        }
+
+        .hero img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+        }
+
+        .hero h2 {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-size: 3rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            font-family: 'Georgia', serif;
+        }
+
+        /* History Section */
+        .history {
+            margin-bottom: 40px;
+            background-color: var(--accent2);
+            padding: 2rem;
+            border-radius: 8px;
+        }
+
+        .history-content {
+            display: grid;
+            grid-template-columns: 1fr 200px 1fr;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .history-content img {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Adventures Gallery */
+        .adventures {
+            margin-bottom: 40px;
+        }
+
+        .adventures h2 {
+            color: var(--primary);
+            font-family: 'Georgia', serif;
+        }
+
+        .adventures-gallery {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 15px;
+        }
+
+        .adventures-gallery figure {
+            margin: 0;
+        }
+
+        .adventures-gallery img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        .adventures-gallery figcaption {
+            text-align: center;
+            margin-top: 8px;
+            font-size: 0.9rem;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--secondary);
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            margin-top: 40px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-links img {
+            width: 30px;
+            height: 30px;
+        }
+
+        footer a {
+            color: var(--accent1);
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            .header-grid {
+                grid-template-columns: 1fr;
+                justify-items: center;
+            }
+            
+            .history-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .adventures-gallery {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .nav-flex {
+                flex-direction: column;
+                gap: 10px;
+                text-align: center;
+            }
+            
+            .adventures-gallery {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Georgia:wght@400;700;900&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
-        <div class="logo-container">
-          <img src="z-splash.png" alt="Z-Splash Logo" class="logo">
-          <h1 style="font-family: 'Georgia', serif; margin: 0;">WHITEWATER RAFTING</h1>
+        <div class="header-grid">
+            <img src="z-splash.png" alt="Rafting Site Logo" class="logo">
+            <h1>Whitewater Rafting</h1>
+            <nav>
+                <ul class="nav-flex">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="trips.html">Trips</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
         </div>
-        <nav>
-          <a href="index.html">Home</a>
-          <a href="about.html">About Us</a>
-          <a href="trips.html">Trips</a>
-          <a href="contact.html">Contact Us</a>
-        </nav>
-      </header>
+    </header>
 
-  <main>
-    <section class="history">
-      <h2 style="font-family: 'Georgia', serif;">OUR HISTORY</h2>
-      <p>Founded in 2005, Whitewater Rafting Co. began with a passion for adventure and a commitment to safety. Our founders, John and Sarah Rivers, started with just one raft and a dream to share the beauty of the river with others.</p>
-      <img src="history.jpg" alt="Founders" width="300">
-    </section>
-
-    <section>
-      <h2 style="font-family: 'Georgia', serif; text-align: center; padding: 1rem;">MEET OUR TEAM</h2>
-      <div class="team">
-        <div class="team-member">
-          <img src="guide1.jpg" alt="Guide Alex" width="100">
-          <h3>Alex</h3>
-          <p>Lead Guide (10+ years experience)</p>
+    <main>
+        <div class="hero">
+            <img src="rafting-hero.jpg" alt="Rafting Adventure">
+            <h2>Whitewater Rafting</h2>
         </div>
-        <div class="team-member">
-          <img src="guide2.jpg" alt="Guide Maria" width="100">
-          <h3>Maria</h3>
-          <p>Safety Expert</p>
+
+        <section class="history">
+            <h2>History</h2>
+            <div class="history-content">
+                <p>Founded in 1985 by river enthusiast John Doe, Whitewater Rafting began as a small operation with just two rafts. Today, we're the premier rafting company in the region, offering unforgettable adventures on some of the most exciting rivers.</p>
+                <img src="history.jpg" alt="Our humble beginnings">
+                <p>Our mission is to provide safe, exciting, and memorable rafting experiences while preserving the natural beauty of our rivers. We're proud to have introduced over 50,000 adventurers to the thrill of whitewater rafting.</p>
+            </div>
+        </section>
+
+        <section class="adventures">
+            <h2>Adventure Awaits You!</h2>
+            <div class="adventures-gallery">
+                <figure>
+                    <img src="about-us.jpg" alt="Los Dientes del Diablo">
+                    <figcaption>Los Dientes del Diablo</figcaption>
+                </figure>
+                <figure>
+                    <img src="beginner-rapids.jpg" alt="Big Mallard">
+                    <figcaption>Big Mallard</figcaption>
+                </figure>
+                <figure>
+                    <img src="booking.jpg" alt="Half Day Adventure">
+                    <figcaption>Half Day Adventure</figcaption>
+                </figure>
+                <figure>
+                    <img src="rafting-hero.jpg" alt="Wild Rapids">
+                    <figcaption>Wild Rapids</figcaption>
+                </figure>
+                <figure>
+                    <img src="testimonial.jpg" alt="Sunset Cruise">
+                    <figcaption>Sunset Cruise</figcaption>
+                </figure>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Whitewater Rafting | Created by Richlove Ama Tetteh</p>
+        <div class="social-links">
+            <a href="https://facebook.com"><img src="facebook.png" alt="Facebook"></a>
+            <a href="https://twitter.com"><img src="twitter.png" alt="Twitter"></a>
+            <a href="https://instagram.com"><img src="instagram.jpg" alt="Instagram"></a>
         </div>
-      </div>
-    </section>
-
-    <section style="background-color: var(--primary); color: white; padding: 2rem; text-align: center;">
-      <h2 style="font-family: 'Georgia', serif;">SAFETY FIRST</h2>
-      <p>All guides are certified in CPR and wilderness first aid. We use only top-tier equipment.</p>
-    </section>
-  </main>
-
-  <footer>
-    <p>&copy; 2025 Richlove Ama Tetteh Co. | 
-      <a href="#" style="color: var(--accent1);">Privacy Policy</a>
-    </p>
-  </footer>
+    </footer>
 </body>
 </html>
